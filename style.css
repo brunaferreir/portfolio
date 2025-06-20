@@ -1,0 +1,260 @@
+/* Variáveis CSS para facilitar a manutenção */
+:root {
+    --primary-text-color: #333;
+    --secondary-text-color: #555;
+    --link-color: #0d0f11;
+    --background-light: #f9f9f9;
+    --card-background: #fff;
+    --border-color: #eee;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --highlight-blue: #e0f2ff; /* Cor do card de blog destacado */
+}
+
+/* Reset básico e fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--primary-text-color);
+    background-color: var(--background-light);
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+
+.hero {
+    background-image: url('images/sun.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 80px 0 100px;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(171, 89, 54, 0.313); /* Overlay escuro */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* Para ficar acima do overlay */
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #fff;
+}
+
+.nav-links a {
+    color: #fff;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e0e0e0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    margin-top: 50px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Seções Principais */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: var(--card-background);
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: var(--primary-text-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+/* Seção "About Me" */
+.about-me p {
+    margin-bottom: 15px;
+}
+
+.about-me .experience {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--primary-text-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.social-button i {
+    margin-right: 8px;
+    color: var(--link-color);
+}
+
+.social-button:hover {
+    background-color: var(--background-light);
+    border-color: var(--link-color);
+}
+
+
+
+/* Seção de Projetos */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Garante que a imagem cubra o espaço */
+    display: block;
+}
+
+.project-info {
+    padding: 20px;
+    flex-grow: 1; /* Permite que o conteúdo cresça */
+    position: relative;
+}
+
+.project-info h3 {
+    font-size: 1.4em;
+    margin-bottom: 8px;
+    color: var(--primary-text-color);
+}
+
+.project-info p {
+    font-size: 0.95em;
+    color: var(--secondary-text-color);
+    margin-bottom: 15px;
+}
+
+.project-info .year {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--link-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+/* Rodapé (se necessário) */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    color: var(--secondary-text-color);
+    background-color: var(--card-background);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        margin: 0 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 30px 20px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+}
