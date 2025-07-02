@@ -31,11 +31,11 @@ a {
 
 
 .hero {
-    background-image: url('images/sun.png');
+    background-image: url('images/galatic.png');
     background-size: cover;
     background-position: center;
     color: #fff;
-    padding: 80px 0 100px;
+    padding: 30px 0 100px;
     text-align: center;
     position: relative;
 }
@@ -47,7 +47,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(171, 89, 54, 0.313); /* Overlay escuro */
+    background-color: rgba(171, 89, 54, 0); /* Overlay escuro */
 }
 
 .navbar {
@@ -61,21 +61,18 @@ a {
     z-index: 10;
 }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: #fff;
-}
+
 
 .nav-links a {
     color: #fff;
     margin-left: 20px;
     font-weight: 600;
     transition: color 0.3s ease;
+    text-align: left;
 }
 
 .nav-links a:hover {
-    color: #e0e0e0;
+    color: #ececeea3;
 }
 
 .hero-content {
